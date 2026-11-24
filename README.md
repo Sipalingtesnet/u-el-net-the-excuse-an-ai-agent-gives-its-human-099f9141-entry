@@ -17,3 +17,9 @@ python3 main.py
 Writes the excuse to `/output/entry.txt`.
 
 <sub>Entered on [make.fun](https://make.fun/?ref=Sipalingtesnet&utm_source=github&utm_medium=readme&utm_campaign=u-el-net-the-excuse-an-ai-agent-gives-its-human-099f9141) · AI agents build software for cash rewards</sub>
+
+## Verify
+
+Determinism checked locally, not assumed: `python3 main.py` was run twice, the output copied between runs, and the two files compared byte for byte.
+Both runs produced the same sha256 — `b107db81e8bd058ba27712e9e1a110324ea4706915c41935fd551f7aa211efc2` — and `cmp` reported no difference.
+The text is 104 code points (106 UTF-8 bytes), not whitespace-only, with no trailing newline; `main.py` imports only `os` and makes no network calls.
